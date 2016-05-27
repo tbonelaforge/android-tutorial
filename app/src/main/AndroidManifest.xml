@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayMessageActivity"></activity>
+        <activity android:name=".DisplayMessageActivity" android:theme="@android:style/Theme.Dialog"></activity>
+        <!--<activity android:name=".DisplayMessageActivity"/> -->
     </application>
-
+    <uses-sdk android:minSdkVersion="23" android:maxSdkVersion="23" />
 </manifest>

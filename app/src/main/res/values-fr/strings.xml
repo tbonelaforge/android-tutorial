@@ -2,4 +2,5 @@
     <string name="app_name">Première application</string>
     <string name="edit_message">Entrez un message.</string>
     <string name="button_send">Envoyer</string>
+    <string name="hello_world">Bonjour le monde</string>
 </resources>

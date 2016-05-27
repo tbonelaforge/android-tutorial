@@ -15,4 +15,8 @@
         android:text="@string/button_send"
         android:onClick="sendMessage">
     </Button>
+    <ListView android:id="@+id/list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    </ListView>
 </LinearLayout>
