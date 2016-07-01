@@ -30,10 +30,7 @@ public class ListItemAdapter extends ArrayAdapter<String> {
         Button button = (Button) listItemView.findViewById(R.id.list_item_remove_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.printf("Inside the click handler for item number %d, got called", position);
-                Log.d("remove", String.format("Inside the click handler for item number %d, got called", position));
                 MyActivity myActivity = (MyActivity) getContext();
-                Log.d("remove", "About to call removItem on myActivity");
                 myActivity.removeItem(position);
             }
         });
