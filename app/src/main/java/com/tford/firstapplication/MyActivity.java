@@ -25,7 +25,7 @@ public class MyActivity extends Activity {
 
     private ListView listView;
 
-    private ArrayAdapter<String> listAdapter;
+    private ListItemAdapter listItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +37,13 @@ public class MyActivity extends Activity {
         }
         setContentView(R.layout.activity_my);
         listView = (ListView) findViewById(R.id.list);
-        listAdapter = new ArrayAdapter<String>(
+        listItemAdapter = new ListItemAdapter(
                 this,
-                android.R.layout.simple_list_item_1,
+                R.layout.list_item,
+                R.id.list_item_text_view,
                 previousMessages
         );
-        listView.setAdapter(listAdapter);
+        listView.setAdapter(listItemAdapter);
     }
 
     @Override
@@ -69,7 +70,7 @@ public class MyActivity extends Activity {
         if (requestCode == APPROVE_MESSAGE_REQUEST) {
             if (resultCode == RESULT_OK || resultCode == RESULT_CANCELED) {
                 previousMessages.add(intent.getStringExtra(EXTRA_MESSAGE));
-                listAdapter.notifyDataSetChanged();
+                listItemAdapter.notifyDataSetChanged();
             }
         }
     }
@@ -80,7 +81,7 @@ public class MyActivity extends Activity {
 
     public void onResume() {
         super.onResume();
-        listAdapter.notifyDataSetChanged();
+        listItemAdapter.notifyDataSetChanged();
     }
 
     public void onStop() {
@@ -89,6 +90,11 @@ public class MyActivity extends Activity {
 
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    public void removeItem(int position) {
+        previousMessages.remove(position);
+        listItemAdapter.notifyDataSetChanged();
     }
 
 }

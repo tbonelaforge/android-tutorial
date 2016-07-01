@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single List Item Design -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FF00">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold" >
+    </TextView>
+    <Button
+        android:id="@+id/list_item_remove_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_remove"
+        android:onClick="removeItem">
+    </Button>
+</LinearLayout>
